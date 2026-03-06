@@ -227,12 +227,12 @@ function buildGameButton(){
         }
 	}
 
-	buttonClassic.cursor = "pointer";
-	buttonClassic.addEventListener("click", function(evt) {
-		playSound('soundButton');
-		gameData.type = 'classic';
-		goPage("theme");
-	});
+buttonClassic.addEventListener("click", function(evt) {
+    playSound('soundButton');
+    gameData.type = 'classic';
+    gameData.themeNum = 0; // Establece el tema por defecto (donde pusiste tus artes)
+    goPage("game");        // Salta directamente al juego
+});
 
 	buttonAdventure.cursor = "pointer";
 	buttonAdventure.addEventListener("click", function(evt) {
@@ -1926,3 +1926,4 @@ function share(action){
 	
 	window.open(shareurl);
 }
+
