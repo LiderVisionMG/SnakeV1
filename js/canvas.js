@@ -380,7 +380,7 @@ function buildGameCanvas(){
 		guideline.graphics.setStrokeStyle(2).beginStroke('red').drawRect((stageW-contentW)/2, (stageH-contentH)/2, contentW, contentH);
 	}
 	
-	mainContainer.addChild(logo, logoP, buttonClassic, buttonAdventure);
+	mainContainer.addChild(logo, buttonClassic);
 	maskContainer.addChild(snakeStroke, snakeContainer);
 	gridContainer.addChild(gridWall, gridGround, bgContainer, scoreContainer, brickContainer, maskContainer);
 	gameContainer.addChild(levelStatusContainer, brickStatusContainer, scoreStatusContainer, statusContainer, touchContainer);
@@ -440,7 +440,7 @@ function changeCanvasViewport(){
 				buttonAdventure.visible = true;
 			}else{
 				buttonClassic.x = canvasW/2;
-				buttonClassic.y = canvasH/100 * 75;
+				buttonClassic.y = canvasH/2 * 75;
 				buttonAdventure.visible = false;
 			}
 
@@ -769,4 +769,5 @@ function centerReg(obj){
 
 function createHitarea(obj){
 	obj.hitArea = new createjs.Shape(new createjs.Graphics().beginFill("#000").drawRect(0, 0, obj.image.naturalWidth, obj.image.naturalHeight));
+
 }
