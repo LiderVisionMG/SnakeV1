@@ -927,7 +927,7 @@ function checkSnakeRotation(){
 }
 
 function getSnakeRotation(index,thisSnake){
-	var girdSize = gameSettings.gridSize;
+	var gridSize = gameSettings.gridSize;
 	thisSnake.rotation = 0;
 	thisSnake.scaleX = thisSnake.scaleY = 1;
 
@@ -948,15 +948,15 @@ function getSnakeRotation(index,thisSnake){
 		if(getDistance(nextGrid.x, nextGrid.y, currentGrid.x, currentGrid.y) > gameSettings.gridSize){
 			if(currentGrid.x == nextGrid.x){
 				if(nextGrid.y > currentGrid.y){
-					nextGrid = {x:currentGrid.x, y:currentGrid.y - girdSize};
+					nextGrid = {x:currentGrid.x, y:currentGrid.y - gridSize};
 				}else{
-					nextGrid = {x:currentGrid.x, y:currentGrid.y + girdSize};
+					nextGrid = {x:currentGrid.x, y:currentGrid.y + gridSize};
 				}
 			}else if(currentGrid.y == nextGrid.y){
 				if(nextGrid.x > currentGrid.x){
-					nextGrid = {x:currentGrid.x-girdSize, y:currentGrid.y};
+					nextGrid = {x:currentGrid.x-gridSize, y:currentGrid.y};
 				}else{
-					nextGrid = {x:currentGrid.x+girdSize, y:currentGrid.y};
+					nextGrid = {x:currentGrid.x+gridSize, y:currentGrid.y};
 				}
 			}
 		}
@@ -964,15 +964,15 @@ function getSnakeRotation(index,thisSnake){
 		if(getDistance(lastGrid.x, lastGrid.y, currentGrid.x, currentGrid.y) > gameSettings.gridSize){
 			if(currentGrid.x == lastGrid.x){
 				if(lastGrid.y > currentGrid.y){
-					lastGrid = {x:currentGrid.x, y:currentGrid.y - girdSize};
+					lastGrid = {x:currentGrid.x, y:currentGrid.y - gridSize};
 				}else{
-					lastGrid = {x:currentGrid.x, y:currentGrid.y + girdSize};
+					lastGrid = {x:currentGrid.x, y:currentGrid.y + gridSize};
 				}
 			}else if(currentGrid.y == lastGrid.y){
 				if(lastGrid.x > currentGrid.x){
-					lastGrid = {x:currentGrid.x-girdSize, y:currentGrid.y};
+					lastGrid = {x:currentGrid.x-gridSize, y:currentGrid.y};
 				}else{
-					lastGrid = {x:currentGrid.x+girdSize, y:currentGrid.y};
+					lastGrid = {x:currentGrid.x+gridSize, y:currentGrid.y};
 				}
 			}
 		}
@@ -1926,4 +1926,5 @@ function share(action){
 	
 	window.open(shareurl);
 }
+
 
